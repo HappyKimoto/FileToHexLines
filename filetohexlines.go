@@ -9,12 +9,7 @@ import (
 
 func addHexLineBlock(curLine *[]byte, result *string) {
 	for i := 0; i < len(*curLine); i++ {
-		*result += fmt.Sprintf("%02x", (*curLine)[i])
-		if i%16 == 0 {
-			*result += "\r\n"
-		} else {
-			*result += " "
-		}
+		*result += fmt.Sprintf("%02x ", (*curLine)[i])
 	}
 	*result += "\r\n"
 }
